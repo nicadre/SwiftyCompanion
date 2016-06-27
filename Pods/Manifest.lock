@@ -1,0 +1,25 @@
+PODS:
+  - Alamofire (3.2.1)
+  - AlamofireNetworkActivityIndicator (1.0.0):
+    - Alamofire (~> 3.2)
+  - p2.OAuth2 (2.2.1):
+    - SwiftKeychain (~> 0.1.5)
+  - SwiftKeychain (0.1.5)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireNetworkActivityIndicator
+  - p2.OAuth2
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
+  AlamofireNetworkActivityIndicator: 34e6fe7ebb5d8df76cc55fbf83a6087ae6457344
+  p2.OAuth2: 7f5c44259ef83ea5b9ef8f9049310611788f86cb
+  SwiftKeychain: 1387edad8b56c659daa93d9ffc99526bac5b0088
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+PODFILE CHECKSUM: 026b36b01ec69e5d31e9c2bbbcb98fecb2b918c7
+
+COCOAPODS: 1.0.1

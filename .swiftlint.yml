@@ -1,0 +1,4 @@
+included:
+- SwiftyCompanion
+excluded:
+- Pods
