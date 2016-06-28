@@ -10,13 +10,16 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
-	@IBOutlet weak var scrollView: UIScrollView!
+	@IBOutlet weak var contentView: UIView!
 	@IBOutlet weak var profileImage: UIImageView!
 
 	@IBOutlet weak var nameLabel: UILabel!
 	@IBOutlet weak var loginLabel: UILabel!
+	@IBOutlet weak var emailLabel: UILabel!
 	@IBOutlet weak var phoneLabel: UILabel!
 	@IBOutlet weak var levelLabel: UILabel!
+	@IBOutlet weak var correctionPointLabel: UILabel!
+	@IBOutlet weak var walletLabel: UILabel!
 
 	var user: User!
 
@@ -25,15 +28,6 @@ class ProfileViewController: UIViewController {
 		super.viewDidLoad()
 
 		tabBarController?.title = "Profile"
-
-		self.scrollView.showsHorizontalScrollIndicator = false
-		let bounds = scrollView.bounds
-		self.scrollView.contentSize = CGSize(width: bounds.width, height: bounds.height)
-		self.scrollView.frame = CGRect(x: bounds.origin.x,
-		                               y: bounds.origin.y,
-		                               width: bounds.width,
-		                               height: bounds.height)
-
 
 		self.profileImage.layer.borderWidth = 3
 		self.profileImage.layer.masksToBounds = false
@@ -48,14 +42,13 @@ class ProfileViewController: UIViewController {
 		}
 
 		self.nameLabel.text = user.displayName
-		self.loginLabel.text = user.login
-		self.phoneLabel.text = user.phone
-		self.levelLabel.text = "\(user.cursusUsers[0].level)"
+		self.loginLabel.text = "Login: \(user.login)"
+		self.emailLabel.text = "Email: \(user.email)"
+		self.phoneLabel.text = "Phone: \(user.phone)"
+		self.levelLabel.text = "Level: \(user.cursusUsers[0].level)"
+		self.correctionPointLabel.text = "Correction Points: \(user.correctionPoint)"
+		self.walletLabel.text = "Wallet: \(user.wallet)"
 
-	}
-
-	func scrollViewDidScroll(scrollView: UIScrollView) {
-		self.scrollView.contentOffset.x = 0
 	}
 
 }

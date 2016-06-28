@@ -43,6 +43,9 @@ extension SearchViewController {
 
 		if segue.identifier == "showProfileSegue" {
 			if let tbc = segue.destinationViewController as? UITabBarController {
+				if let vc = tbc.viewControllers![1] as? SkillsViewController {
+					vc.user = user
+				}
 				if let dvc = tbc.viewControllers![0] as? ProfileViewController {
 					dvc.user = self.user
 				}

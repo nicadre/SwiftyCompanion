@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="skillCell" id="g9z-fF-uB6" customClass="SkillTableViewCell" customModule="SwiftyCompanion" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g9z-fF-uB6" id="4c4-EC-M32">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill Name" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzO-RI-yKy">
+                        <rect key="frame" x="8" y="0.0" width="304" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="304" id="3F8-nN-5Z4"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8Fs-Xm-LUJ">
+                        <rect key="frame" x="8" y="29" width="150" height="2"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="bqt-zK-PiE"/>
+                        </constraints>
+                    </progressView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5f-lF-Nuq">
+                        <rect key="frame" x="166" y="19" width="146" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="146" id="ElN-uq-vpY"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Z5f-lF-Nuq" firstAttribute="trailing" secondItem="mzO-RI-yKy" secondAttribute="trailing" id="4mY-L8-mpD"/>
+                    <constraint firstItem="mzO-RI-yKy" firstAttribute="top" secondItem="4c4-EC-M32" secondAttribute="top" id="KYm-67-U2P"/>
+                    <constraint firstItem="Z5f-lF-Nuq" firstAttribute="trailing" secondItem="4c4-EC-M32" secondAttribute="trailingMargin" id="Ngp-9I-7u3"/>
+                    <constraint firstItem="8Fs-Xm-LUJ" firstAttribute="top" secondItem="mzO-RI-yKy" secondAttribute="bottom" constant="8" symbolic="YES" id="Nwx-cz-51R"/>
+                    <constraint firstItem="Z5f-lF-Nuq" firstAttribute="centerY" secondItem="8Fs-Xm-LUJ" secondAttribute="centerY" id="Qql-aR-Nea"/>
+                    <constraint firstItem="Z5f-lF-Nuq" firstAttribute="leading" secondItem="8Fs-Xm-LUJ" secondAttribute="trailing" constant="8" symbolic="YES" id="eUW-fu-s7K"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="levelLabel" destination="Z5f-lF-Nuq" id="FHr-T6-Ak4"/>
+                <outlet property="levelProgressView" destination="8Fs-Xm-LUJ" id="6h2-hm-OtR"/>
+                <outlet property="skillNameLabel" destination="mzO-RI-yKy" id="Slr-ch-xcU"/>
+            </connections>
+            <point key="canvasLocation" x="380" y="228"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -17,6 +17,9 @@
 		382CCF6E1D1A8398005A0807 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 382CCF6D1D1A8398005A0807 /* Assets.xcassets */; };
 		382CCF711D1A8398005A0807 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382CCF6F1D1A8398005A0807 /* LaunchScreen.storyboard */; };
 		3879AD5A1D21B7C30021EDD0 /* ProjectUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3879AD591D21B7C30021EDD0 /* ProjectUser.swift */; };
+		3879AD5C1D229A7D0021EDD0 /* SkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3879AD5B1D229A7D0021EDD0 /* SkillsViewController.swift */; };
+		3879AD5E1D229B340021EDD0 /* SkillTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3879AD5D1D229B340021EDD0 /* SkillTableViewCell.xib */; };
+		3879AD601D229C510021EDD0 /* SkillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3879AD5F1D229C510021EDD0 /* SkillTableViewCell.swift */; };
 		389A65301D1E7D62006242E5 /* me.json in Resources */ = {isa = PBXBuildFile; fileRef = 389A652F1D1E7D62006242E5 /* me.json */; };
 		389A65331D1EBB4D006242E5 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 389A65321D1EBB4D006242E5 /* SwiftyJSON.framework */; };
 		389A65391D1EFA79006242E5 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389A65381D1EFA79006242E5 /* Project.swift */; };
@@ -44,6 +47,9 @@
 		382CCF701D1A8398005A0807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		382CCF721D1A8398005A0807 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3879AD591D21B7C30021EDD0 /* ProjectUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectUser.swift; sourceTree = "<group>"; };
+		3879AD5B1D229A7D0021EDD0 /* SkillsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillsViewController.swift; sourceTree = "<group>"; };
+		3879AD5D1D229B340021EDD0 /* SkillTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SkillTableViewCell.xib; sourceTree = "<group>"; };
+		3879AD5F1D229C510021EDD0 /* SkillTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillTableViewCell.swift; sourceTree = "<group>"; };
 		389A652F1D1E7D62006242E5 /* me.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = me.json; sourceTree = "<group>"; };
 		389A65321D1EBB4D006242E5 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/SwiftyCompanion-cwlosztjlbersxcnslattftlqauy/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		389A65381D1EFA79006242E5 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
@@ -117,6 +123,7 @@
 			children = (
 				382CCF681D1A8398005A0807 /* SearchViewController.swift */,
 				38F66D781D21458D00D318E0 /* ProfileViewController.swift */,
+				3879AD5B1D229A7D0021EDD0 /* SkillsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -157,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				382CCF6A1D1A8398005A0807 /* Main.storyboard */,
+				3879AD5D1D229B340021EDD0 /* SkillTableViewCell.xib */,
+				3879AD5F1D229C510021EDD0 /* SkillTableViewCell.swift */,
 				382CCF6F1D1A8398005A0807 /* LaunchScreen.storyboard */,
 			);
 			name = Views;
@@ -250,6 +259,7 @@
 				389A65301D1E7D62006242E5 /* me.json in Resources */,
 				382CCF6E1D1A8398005A0807 /* Assets.xcassets in Resources */,
 				382CCF6C1D1A8398005A0807 /* Main.storyboard in Resources */,
+				3879AD5E1D229B340021EDD0 /* SkillTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +336,7 @@
 				38F66D771D21135B00D318E0 /* Team.swift in Sources */,
 				382716B01D1B382800137146 /* APIRequester.swift in Sources */,
 				389A653D1D206AFA006242E5 /* Skill.swift in Sources */,
+				3879AD601D229C510021EDD0 /* SkillTableViewCell.swift in Sources */,
 				382CCF691D1A8398005A0807 /* SearchViewController.swift in Sources */,
 				389A65411D207BBD006242E5 /* Achievement.swift in Sources */,
 				389A653F1D207118006242E5 /* Cursus.swift in Sources */,
@@ -334,6 +345,7 @@
 				3879AD5A1D21B7C30021EDD0 /* ProjectUser.swift in Sources */,
 				38F66D791D21458D00D318E0 /* ProfileViewController.swift in Sources */,
 				382716B61D1C88BB00137146 /* User.swift in Sources */,
+				3879AD5C1D229A7D0021EDD0 /* SkillsViewController.swift in Sources */,
 				389A65391D1EFA79006242E5 /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
