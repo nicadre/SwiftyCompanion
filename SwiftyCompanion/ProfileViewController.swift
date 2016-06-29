@@ -20,6 +20,7 @@ class ProfileViewController: UIViewController {
 	@IBOutlet weak var levelLabel: UILabel!
 	@IBOutlet weak var correctionPointLabel: UILabel!
 	@IBOutlet weak var walletLabel: UILabel!
+	@IBOutlet weak var skillsTableView: UITableView!
 
 	var user: User!
 
@@ -28,6 +29,12 @@ class ProfileViewController: UIViewController {
 		super.viewDidLoad()
 
 		tabBarController?.title = "Profile"
+
+		skillsTableView.dataSource = self
+		skillsTableView.delegate = self
+
+		let nib = UINib(nibName: "SkillTableViewCell", bundle: nil)
+		skillsTableView.registerNib(nib, forCellReuseIdentifier: "skillCell")
 
 		self.profileImage.layer.borderWidth = 3
 		self.profileImage.layer.masksToBounds = false
@@ -48,6 +55,30 @@ class ProfileViewController: UIViewController {
 		self.levelLabel.text = "Level: \(user.cursusUsers[0].level)"
 		self.correctionPointLabel.text = "Correction Points: \(user.correctionPoint)"
 		self.walletLabel.text = "Wallet: \(user.wallet)"
+
+	}
+
+}
+
+// MARK: - UITableView
+extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
+
+	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return (self.user.cursusUsers[0].skills?.count)!
+	}
+
+	func tableView(tableView: UITableView,
+	               cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
+		let skill = self.user.cursusUsers[0].skills?[indexPath.row]
+		// swiftlint:disable force_cast
+		let cell = tableView.dequeueReusableCellWithIdentifier("skillCell") as! SkillTableViewCell
+		// swiftlint:enable force_cast
+		cell.skillNameLabel.text = skill!.name
+		cell.levelProgressView.progress = modf(skill!.level).1
+		cell.levelLabel.text = "\(skill!.level)"
+
+		return cell
 
 	}
 

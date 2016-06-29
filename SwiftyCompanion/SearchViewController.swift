@@ -14,6 +14,7 @@ import Alamofire
 class SearchViewController: UIViewController {
 
 	@IBOutlet var searchTextField: UITextField!
+	@IBOutlet weak var badLoginLabel: UILabel!
 
 	var request: Request?
 	var user: User?
@@ -21,6 +22,7 @@ class SearchViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		searchTextField.delegate = self
+		badLoginLabel.hidden = true
 	}
 
 	override func viewWillAppear(animated: Bool) {
@@ -43,8 +45,11 @@ extension SearchViewController {
 
 		if segue.identifier == "showProfileSegue" {
 			if let tbc = segue.destinationViewController as? UITabBarController {
-				if let vc = tbc.viewControllers![1] as? SkillsViewController {
-					vc.user = user
+				if let vc = tbc.viewControllers![1] as? ProjectsViewController {
+					vc.user = self.user
+				}
+				if let vc = tbc.viewControllers![2] as? AchievementsViewController {
+					vc.user = self.user
 				}
 				if let dvc = tbc.viewControllers![0] as? ProfileViewController {
 					dvc.user = self.user
@@ -65,14 +70,26 @@ extension SearchViewController: UITextFieldDelegate {
 
 		manager.request(.GET, "https://api.intra.42.fr/v2/users/\(textField.text!)") { response in
 
+			guard response.response?.statusCode >= 200 && response.response?.statusCode < 300 else {
+				self.badLoginLabel.text = "Bad Login"
+				self.badLoginLabel.hidden = false
+				textField.enabled = true
+				return
+			}
 			self.user = User(data: response.data)
-			print(self.user)
 
 			if self.user != nil {
+				self.badLoginLabel.hidden = true
+				textField.enabled = true
 				self.performSegueWithIdentifier("showProfileSegue", sender: self)
+			} else {
+				self.badLoginLabel.text = "API changed..."
+				self.badLoginLabel.hidden = false
+				textField.enabled = true
 			}
 
 		}
+		textField.enabled = false
 		return true
 
 	}

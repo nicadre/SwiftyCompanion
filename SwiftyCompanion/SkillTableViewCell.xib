@@ -15,38 +15,32 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill Name" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzO-RI-yKy">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzO-RI-yKy">
                         <rect key="frame" x="8" y="0.0" width="304" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="304" id="3F8-nN-5Z4"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8Fs-Xm-LUJ">
-                        <rect key="frame" x="8" y="29" width="150" height="2"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="150" id="bqt-zK-PiE"/>
-                        </constraints>
+                        <rect key="frame" x="8" y="29" width="256" height="2"/>
                     </progressView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5f-lF-Nuq">
-                        <rect key="frame" x="166" y="19" width="146" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="146" id="ElN-uq-vpY"/>
-                        </constraints>
+                        <rect key="frame" x="272" y="19" width="40" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Z5f-lF-Nuq" firstAttribute="trailing" secondItem="mzO-RI-yKy" secondAttribute="trailing" id="4mY-L8-mpD"/>
-                    <constraint firstItem="mzO-RI-yKy" firstAttribute="top" secondItem="4c4-EC-M32" secondAttribute="top" id="KYm-67-U2P"/>
-                    <constraint firstItem="Z5f-lF-Nuq" firstAttribute="trailing" secondItem="4c4-EC-M32" secondAttribute="trailingMargin" id="Ngp-9I-7u3"/>
-                    <constraint firstItem="8Fs-Xm-LUJ" firstAttribute="top" secondItem="mzO-RI-yKy" secondAttribute="bottom" constant="8" symbolic="YES" id="Nwx-cz-51R"/>
-                    <constraint firstItem="Z5f-lF-Nuq" firstAttribute="centerY" secondItem="8Fs-Xm-LUJ" secondAttribute="centerY" id="Qql-aR-Nea"/>
-                    <constraint firstItem="Z5f-lF-Nuq" firstAttribute="leading" secondItem="8Fs-Xm-LUJ" secondAttribute="trailing" constant="8" symbolic="YES" id="eUW-fu-s7K"/>
+                    <constraint firstItem="mzO-RI-yKy" firstAttribute="centerX" secondItem="4c4-EC-M32" secondAttribute="centerX" id="Hxe-BQ-gzY"/>
+                    <constraint firstItem="Z5f-lF-Nuq" firstAttribute="leading" secondItem="8Fs-Xm-LUJ" secondAttribute="trailing" constant="8" id="Sfi-wD-ufw"/>
+                    <constraint firstItem="mzO-RI-yKy" firstAttribute="top" secondItem="4c4-EC-M32" secondAttribute="topMargin" constant="-8" id="W0G-Qj-oH6"/>
+                    <constraint firstItem="Z5f-lF-Nuq" firstAttribute="top" secondItem="mzO-RI-yKy" secondAttribute="bottom" constant="-2" id="ad1-sk-iym"/>
+                    <constraint firstItem="8Fs-Xm-LUJ" firstAttribute="top" secondItem="mzO-RI-yKy" secondAttribute="bottom" constant="8" id="jEM-LT-nXd"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Z5f-lF-Nuq" secondAttribute="trailing" id="ml2-nl-LFK"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="8Fs-Xm-LUJ" secondAttribute="leading" id="pen-55-BpY"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="mzO-RI-yKy" secondAttribute="trailing" id="vgB-2n-tMF"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="mzO-RI-yKy" secondAttribute="leading" id="vlF-He-GvN"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

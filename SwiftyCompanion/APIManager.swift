@@ -52,7 +52,6 @@ public class APIManager {
 				.validate()
 				.responseJSON(completionHandler: { (response) in
 
-					print(self.requester.oauth2.accessToken)
 				dispatch_async(dispatch_get_main_queue()) {
 
 					completionHandler(response)
