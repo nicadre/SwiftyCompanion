@@ -14,18 +14,18 @@ class User {
 	let identifier: Int
 	let email: String
 	let login: String
-	let url: String // NSURL ?
-	let phone: String
+	let url: String
+	let phone: String?
 	let displayName: String
-	let imageUrl: String // NSURL ?
+	let imageUrl: String
 	let staff: Bool
 	let correctionPoint: Int
-	let poolMonth: String // NSDate ?
-	let poolYear: String // NSDate ?
-	let location: String? // ???????
+	let poolMonth: String?
+	let poolYear: String?
+	let location: String?
 	let wallet: Int
-	let projectsUsers: [ProjectUser]
-	let cursusUsers: [CursusUser]
+	let projectsUsers: [ProjectUser]?
+	let cursusUsers: [CursusUser]?
 	let achievements: [Achievement]
 
 	private class func getProjects(json: JSON) -> [ProjectUser]? {
@@ -98,16 +98,11 @@ class User {
 			email = json["email"].string,
 			login = json["login"].string,
 			url = json["url"].string,
-			phone = json["phone"].string,
 			displayName = json["displayname"].string,
 			imageUrl = json["image_url"].string,
 			staff = json["staff?"].bool,
 			correctionPoint = json["correction_point"].int,
-			poolMonth = json["pool_month"].string,
-			poolYear = json["pool_year"].string,
 			wallet = json["wallet"].int,
-			projects = User.getProjects(json),
-			cursusUsers = User.getCursusUsers(json),
 			achievements = User.getAchievements(json)
 			else {
 				return nil
@@ -117,17 +112,17 @@ class User {
 		self.email = email
 		self.login = login
 		self.url = url
-		self.phone = phone
+		self.phone = json["phone"].string
 		self.displayName = displayName
 		self.imageUrl = imageUrl
 		self.staff = staff
 		self.correctionPoint = correctionPoint
-		self.poolMonth = poolMonth
-		self.poolYear = poolYear
+		self.poolMonth = json["pool_month"].string
+		self.poolYear = json["pool_year"].string
 		self.location = json["location"].string
 		self.wallet = wallet
-		self.projectsUsers = projects
-		self.cursusUsers = cursusUsers
+		self.projectsUsers = User.getProjects(json)
+		self.cursusUsers = User.getCursusUsers(json)
 		self.achievements = achievements
 
 	}

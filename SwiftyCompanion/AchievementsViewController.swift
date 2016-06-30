@@ -18,13 +18,17 @@ class AchievementsViewController: UIViewController {
 
 		super.viewDidLoad()
 
-		tabBarController?.title = "Achievements"
-
 		tableView.delegate = self
 		tableView.dataSource = self
 
 		let nib = UINib(nibName: "AchievementTableViewCell", bundle: nil)
 		tableView.registerNib(nib, forCellReuseIdentifier: "achievementCell")
+
+	}
+
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+		tabBarController?.title = "Achievements"
 
 	}
 
@@ -48,11 +52,11 @@ extension AchievementsViewController: UITableViewDataSource, UITableViewDelegate
 			as! AchievementTableViewCell
 		// swiftlint:enable force_cast
 
-		if let url = NSURL(string: "https://cdn.intra.42.fr\(achievement.image.stringByReplacingOccurrencesOfString("/uploads", withString: ""))") {
-			if let data = NSData(contentsOfURL: url) {
-				cell.achievementImage.image = UIImage(data: data)
-			}
-		}
+//		if let url = NSURL(string: "https://cdn.intra.42.fr\(achievement.image.stringByReplacingOccurrencesOfString("/uploads", withString: ""))") {
+//			if let data = NSData(contentsOfURL: url) {
+//				cell.achievementImage.image = UIImage(data: data)
+//			}
+//		}
 
 		cell.nameLabel.text = achievement.name
 		cell.descriptionLabel.text = achievement.description

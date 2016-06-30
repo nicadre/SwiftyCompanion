@@ -28,8 +28,6 @@ class ProfileViewController: UIViewController {
 
 		super.viewDidLoad()
 
-		tabBarController?.title = "Profile"
-
 		skillsTableView.dataSource = self
 		skillsTableView.delegate = self
 
@@ -51,10 +49,24 @@ class ProfileViewController: UIViewController {
 		self.nameLabel.text = user.displayName
 		self.loginLabel.text = "Login: \(user.login)"
 		self.emailLabel.text = "Email: \(user.email)"
-		self.phoneLabel.text = "Phone: \(user.phone)"
-		self.levelLabel.text = "Level: \(user.cursusUsers[0].level)"
+		if let phone = user.phone {
+			self.phoneLabel.text = "Phone: \(phone)"
+		} else {
+			self.phoneLabel.hidden = true
+		}
+		if let cursus = user.cursusUsers?[0] {
+			self.levelLabel.text = "Level: \(cursus.level)"
+		} else {
+			self.levelLabel.hidden = true
+		}
 		self.correctionPointLabel.text = "Correction Points: \(user.correctionPoint)"
 		self.walletLabel.text = "Wallet: \(user.wallet)"
+
+	}
+
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+		tabBarController?.title = "Profile"
 
 	}
 
@@ -64,21 +76,24 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
 
 	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return (self.user.cursusUsers[0].skills?.count)!
+		return (self.user.cursusUsers?[0].skills?.count) ?? 0
 	}
 
 	func tableView(tableView: UITableView,
 	               cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-		let skill = self.user.cursusUsers[0].skills?[indexPath.row]
+		if let skill = self.user.cursusUsers?[0].skills?[indexPath.row] {
 		// swiftlint:disable force_cast
 		let cell = tableView.dequeueReusableCellWithIdentifier("skillCell") as! SkillTableViewCell
 		// swiftlint:enable force_cast
-		cell.skillNameLabel.text = skill!.name
-		cell.levelProgressView.progress = modf(skill!.level).1
-		cell.levelLabel.text = "\(skill!.level)"
+		cell.skillNameLabel.text = skill.name
+		cell.levelProgressView.progress = modf(skill.level).1
+		cell.levelLabel.text = "\(skill.level)"
 
 		return cell
+		} else {
+			return UITableViewCell()
+		}
 
 	}
 
